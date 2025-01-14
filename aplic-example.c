@@ -226,11 +226,11 @@ int main(void) {
             return 0x75;
         }
 
-		// if the s/w isr gets hit a second time without resetting the flag, we might have a spurious interrupt
-		if (software_isr_counter > 1) {
-			printf ("Spurious s/w interrupt detected, exiting!\n");
-			return 0xFA;	// spurious interrupt occurred
-		}
+        // if the s/w isr gets hit a second time without resetting the flag, we might have a spurious interrupt
+        if (software_isr_counter > 1) {
+            printf ("Spurious s/w interrupt detected, exiting!\n");
+            return 0xFA;	// spurious interrupt occurred
+        }
     }
     printf("software interrupts - OK\n");
 

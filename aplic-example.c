@@ -10,11 +10,11 @@
  * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  *
  * This example configures and enables BEU global interrupts routed through
- * the APLIC and demonstrates a software method to handle multiple pending and
- * enabled interrupts within one interrupt handler call. Interrupts are
+ * the APLIC and demonstrates how to handle them. Interrupts are
  * triggered through the BEU 'accrued' register which is typically used
  * to monitor errors but can be used to trigger specific events since it
- * has R/W properties.
+ * has R/W properties. Timer and software interrupts are also tested, 
+ * as well as manual triggering of APLIC interrupts.
  ****************************************************************************/
 
 #include <metal/machine.h>

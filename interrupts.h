@@ -12,8 +12,8 @@
 #define DEBUG_PRINT            TRUE
 
 /* Enable the demonstration of different interrupt delivery methods */
-#define INTERRUPT_ID_FOR_SET_MIP_TEST            16			// Use first local external interrupt to test major interrupt handling
-#define INTERRUPT_ID_FOR_SETIP_TEST              21			// test this major interrupt using SETIP by INT number. Make sure this exists in your design
+#define INTERRUPT_ID_FOR_SET_MIP_TEST            16        // Use first local external interrupt to test major interrupt handling
+#define INTERRUPT_ID_FOR_SETIP_TEST              21        // test this major interrupt using SETIP by INT number. Make sure this exists in your design
 
 /* Compile time options to determine which modules we have.
  * Assignments will resolve to 0 or 1, so be careful about using
@@ -69,13 +69,13 @@
 // removed so this example will support designs without BEU as well
 #else
 /* Define BEU Errors and Bit Positions */
-#define BEU_ICACHE_TL_BUS_ERROR                    (1 << 1) 	// Instruction cache TileLink bus error
-#define BEU_ICACHE_ITIM_SINGLE_BIT_ERROR           (1 << 2) 	// Instruction cache or ITIM correctable ECC error
-#define BEU_ICACHE_UNCORRECTABLE_ECC_ERROR         (1 << 3)	// Instruction cache uncorrectable ECC error
-#define BEU_RESERVED                               (1 << 4)	// Reserved
-#define BEU_LD_ST_PTW_TL_BUS_ERROR                 (1 << 5) 	// Load/Store/PTW TileLink bus error
-#define BEU_DCACHE_SINGLE_BIT_ERROR                (1 << 6) 	// Data cache correctable ECC error
-#define BEU_DCACHE_UNCORRECTABLE_ECC_ERROR         (1 << 7) 	// Data cache uncorrectable ECC error
+#define BEU_ICACHE_TL_BUS_ERROR                    (1 << 1)    // Instruction cache TileLink bus error
+#define BEU_ICACHE_ITIM_SINGLE_BIT_ERROR           (1 << 2)    // Instruction cache or ITIM correctable ECC error
+#define BEU_ICACHE_UNCORRECTABLE_ECC_ERROR         (1 << 3)    // Instruction cache uncorrectable ECC error
+#define BEU_RESERVED                               (1 << 4)    // Reserved
+#define BEU_LD_ST_PTW_TL_BUS_ERROR                 (1 << 5)    // Load/Store/PTW TileLink bus error
+#define BEU_DCACHE_SINGLE_BIT_ERROR                (1 << 6)    // Data cache correctable ECC error
+#define BEU_DCACHE_UNCORRECTABLE_ECC_ERROR         (1 << 7)    // Data cache uncorrectable ECC error
 #define UTLB_CORRECTABLE_PARITY_ERROR              (1 << 8)
 #define L2_PRIVATE_TILELINK_BUS_ERROR              (1 << 9)
 #define L2_CACHE_SINGLE_BIT_ERROR                  (1 << 10)
@@ -155,13 +155,13 @@
 
 /* Core Local Interrupter (CLINT) defines */
 #define CLINT_BASE_ADDRESS \
-	METAL_RISCV_CLINT0_0_BASE_ADDRESS
+    METAL_RISCV_CLINT0_0_BASE_ADDRESS
 
 #define CLINT_MSIP_BASE_ADDR \
-	(CLINT_BASE_ADDRESS + METAL_RISCV_CLINT0_MSIP_BASE)
+    (CLINT_BASE_ADDRESS + METAL_RISCV_CLINT0_MSIP_BASE)
 
 #define CLINT_MSIP_ADDR_HART(hartid) \
-	(CLINT_MSIP_BASE_ADDR + 4*hartid)
+    (CLINT_MSIP_BASE_ADDR + 4*hartid)
 
 #define CLINT_MTIMECMP_BASE_ADDR \
     (CLINT_BASE_ADDRESS + METAL_RISCV_CLINT0_MTIMECMP_BASE)
@@ -192,7 +192,7 @@
 #if APLIC_PRESENT
 
 #define APLIC_BASE_ADDR                    METAL_SIFIVE_APLICS_0_BASE_ADDRESS
-#define APLIC_CHICKEN_CSR_ADDR             APLIC_BASE_ADDR		// No offset
+#define APLIC_CHICKEN_CSR_ADDR             APLIC_BASE_ADDR        // No offset
 // The methodology below follows this idea:
 //uint32_t reg = int_id_bit / 32;         // get register index
 //uint32_t bitshift = int_id_bit % 32;    // remainder is bit position

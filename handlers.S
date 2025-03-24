@@ -196,7 +196,7 @@ software_handler_asm:
     // clear msip for this hart
     li      t4, CLINT_MSIP_BASE_ADDR    // base address of global CLINT MMIO region
     csrr    t5, mhartid             // get hartid
-    slli    t5, t5, REG_SIZE_LOG2   // add offset of msip for this hart
+    slli    t5, t5, 2               // multiply by 4 to get mspi reg offset for this hart
     add     t5, t5, t4              // address of msip for this hart now in t5
     sw      x0, 0(t5)               // clear msip for this hart
 

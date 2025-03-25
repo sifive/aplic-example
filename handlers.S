@@ -220,7 +220,7 @@ software_handler_asm:
 #else
     LOAD    t4, 0(sp)
     LOAD    t5, 8(sp)
-    add     sp, sp, -16
+    add     sp, sp, 16
 #endif
 
     mret
